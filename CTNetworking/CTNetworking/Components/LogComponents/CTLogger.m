@@ -21,6 +21,13 @@
 
 #import "CocoaLumberjack.h"
 
+#ifdef DEBUG
+static const int ddLogLevel = DDLogLevelVerbose;
+#else
+static const int ddLogLevel = DDLogLevelOff;
+#endif
+
+
 @interface CTLogger ()
 
 @end
