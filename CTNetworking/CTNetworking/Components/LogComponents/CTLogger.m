@@ -19,6 +19,8 @@
 #import "CTServiceFactory.h"
 #import "CTNetworkingDefines.h"
 
+#import "CocoaLumberjack.h"
+
 @interface CTLogger ()
 
 @end
@@ -54,7 +56,7 @@
     [logString appendURLRequest:request];
     
     [logString appendFormat:@"\n\n********************************************************\nRequest End\n********************************************************\n\n\n\n"];
-    NSLog(@"%@", logString);
+    DDLogVerbose(@"%@", logString);
 #endif
     return logString;
 }
@@ -95,7 +97,7 @@
     
     [logString appendFormat:@"\n\n=========================================\nResponse End\n=========================================\n\n"];
  
-    NSLog(@"%@", logString);
+    DDLogVerbose(@"%@", logString);
 #endif
     
     return logString;
@@ -120,7 +122,7 @@
     [logString appendFormat:@"Content:\n\t%@\n\n", response.contentString];
     
     [logString appendFormat:@"\n\n=========================================\nResponse End\n=========================================\n\n"];
-    NSLog(@"%@", logString);
+    DDLogVerbose(@"%@", logString);
 #endif
     
     return logString;
