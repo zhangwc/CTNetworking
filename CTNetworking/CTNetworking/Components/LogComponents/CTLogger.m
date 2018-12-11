@@ -78,7 +78,7 @@ static const int ddLogLevel = DDLogLevelOff;
 
     BOOL isSuccess = error ? NO : YES;
     
-    logString = [NSMutableString stringWithString:@"\n\n=========================================\nAPI Response\n=========================================\n\n"];
+    logString = [NSMutableString stringWithString:@"\n\n======================================\nAPI Response\n======================================\n\n"];
     
     [logString appendFormat:@"Status:\t%ld\t(%@)\n\n", (long)response.statusCode, [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]];
     [logString appendFormat:@"Content:\n\t%@\n\n", responseString];
@@ -98,11 +98,7 @@ static const int ddLogLevel = DDLogLevelOff;
         [logString appendFormat:@"Error Localized Recovery Suggestion:\t%@\n\n", error.localizedRecoverySuggestion];
     }
     
-    [logString appendString:@"\n---------------  Related Request Content  --------------\n"];
-    
-    [logString appendURLRequest:request];
-    
-    [logString appendFormat:@"\n\n=========================================\nResponse End\n=========================================\n\n"];
+    [logString appendFormat:@"\n\n======================================\nResponse End\n======================================\n\n"];
  
     DDLogVerbose(@"%@", logString);
 #endif
@@ -118,7 +114,7 @@ static const int ddLogLevel = DDLogLevelOff;
         return @"";
     }
 
-    logString = [NSMutableString stringWithString:@"\n\n=========================================\nCached Response                             \n=========================================\n\n"];
+    logString = [NSMutableString stringWithString:@"\n\n======================================\nCached Response                             \n======================================\n\n"];
 
     [logString appendFormat:@"API Name:\t\t%@\n", [methodName CT_defaultValue:@"N/A"]];
     [logString appendFormat:@"Service:\t\t%@\n", [service class]];
@@ -128,7 +124,7 @@ static const int ddLogLevel = DDLogLevelOff;
     [logString appendFormat:@"Actual Params:\n%@\n\n", response.acturlRequestParams];
     [logString appendFormat:@"Content:\n\t%@\n\n", response.contentString];
     
-    [logString appendFormat:@"\n\n=========================================\nResponse End\n=========================================\n\n"];
+    [logString appendFormat:@"\n\n=====================================\nResponse End\n======================================\n\n"];
     DDLogVerbose(@"%@", logString);
 #endif
     
